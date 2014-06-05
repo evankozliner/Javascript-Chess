@@ -9,10 +9,19 @@
 .cell {
   height: 50px;
   width: 50px;
+  text-align: center;
+  font-size: 25px;
+}
+.cell span {
+  display: block;
+  margin-top: -3px
 }
 .dark {
   background-color: #ccc;
 }
 .light {
   background-color: #fff;
+}
+.hasPiece {
+  cursor: pointer;
 }
