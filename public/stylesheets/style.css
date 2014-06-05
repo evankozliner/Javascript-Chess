@@ -43,6 +43,6 @@
   cursor: pointer;
 }
 .selected span {
-  border: 1px solid #3498DB;
-  padding-top: 7px;
+  border: 2px solid #3498DB;
+  padding-top: 6px;
 }
