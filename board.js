@@ -65,7 +65,7 @@ Board.prototype.placePieces = function(pieces) {
  * placePiece is a helper function for Board.prototype.placePieces
  *
  * @param {string} piece key value of piece
- * @param {[type]} side  black or white
+ * @param {object} side  black or white
  */
 function placePiece(piece, side) {
   var piece = side[piece];
