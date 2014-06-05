@@ -2,164 +2,164 @@ var pieces = {
   "white": {
     "king": {
       "id": "white-king",
-      "figure": "&#9812;",
+      "figure": "k",
       "position": "e1"
     },
     "queen": {
       "id": "white-queen",
-      "figure": "&#9813;",
+      "figure": "q",
       "position": "d1"
     },
     "bishop1": {
       "id": "white-bishop-1",
-      "figure": "&#9815;",
+      "figure": "b",
       "position": "c1"
     },
     "bishop2": {
       "id": "white-bishop-2",
-      "figure": "&#9815;",
+      "figure": "b",
       "position": "f1"
     },
     "knight1": {
       "id": "white-knight-1",
-      "figure": "&#9816;",
+      "figure": "n",
       "position": "b1"
     },
     "knight2": {
       "id": "white-knight-2",
-      "figure": "&#9816;",
+      "figure": "n",
       "position": "g1"
     },
     "rook1": {
       "id": "white-rook-1",
-      "figure": "&#9814;",
+      "figure": "r",
       "position": "a1"
     },
     "rook2": {
       "id": "white-rook-2",
-      "figure": "&#9814;",
+      "figure": "r",
       "position": "h1"
     },
     "pawn1": {
       "id": "white-pawn-1",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "a2"
     },
     "pawn2": {
       "id": "white-pawn-2",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "b2"
     },
     "pawn3": {
       "id": "white-pawn-3",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "c2"
     },
     "pawn4": {
       "id": "white-pawn-4",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "d2"
     },
     "pawn5": {
       "id": "white-pawn-5",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "e2"
     },
     "pawn6": {
       "id": "white-pawn-6",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "f2"
     },
     "pawn7": {
       "id": "white-pawn-7",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "g2"
     },
     "pawn8": {
       "id": "white-pawn-8",
-      "figure": "&#9817;",
+      "figure": "p",
       "position": "h2"
     }
   },
   "black": {
     "king": {
       "id": "black-king",
-      "figure": "&#9818;",
+      "figure": "l",
       "position": "e8"
     },
     "queen": {
       "id": "black-queen",
-      "figure": "&#9819;",
+      "figure": "w",
       "position": "d8"
     },
     "bishop1": {
       "id": "black-bishop-1",
-      "figure": "&#9821;",
+      "figure": "v",
       "position": "c8"
     },
     "bishop2": {
       "id": "black-bishop-2",
-      "figure": "&#9821;",
+      "figure": "v",
       "position": "f8"
     },
     "knight1": {
       "id": "black-knight-1",
-      "figure": "&#9822;",
+      "figure": "m",
       "position": "b8"
     },
     "knight2": {
       "id": "black-knight-2",
-      "figure": "&#9822;",
+      "figure": "m",
       "position": "g8"
     },
     "rook1": {
       "id": "black-rook-1",
-      "figure": "&#9820;",
+      "figure": "t",
       "position": "a8"
     },
     "rook2": {
       "id": "black-rook-2",
-      "figure": "&#9820;",
+      "figure": "t",
       "position": "h8"
     },
     "pawn1": {
       "id": "black-pawn-1",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "a7"
     },
     "pawn2": {
       "id": "black-pawn-2",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "b7"
     },
     "pawn3": {
       "id": "black-pawn-3",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "c7"
     },
     "pawn4": {
       "id": "black-pawn-4",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "d7"
     },
     "pawn5": {
       "id": "black-pawn-5",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "e7"
     },
     "pawn6": {
       "id": "black-pawn-6",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "f7"
     },
     "pawn7": {
       "id": "black-pawn-7",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "g7"
     },
     "pawn8": {
       "id": "black-pawn-8",
-      "figure": "&#9823;",
+      "figure": "o",
       "position": "h7"
     }
   }

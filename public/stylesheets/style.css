@@ -1,7 +1,19 @@
+@font-face {
+  font-family: 'Maya';
+  src: url('../fonts/MAYAFONT.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MAYAFONT.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MAYAFONT.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/MAYAFONT.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/MAYAFONT.svg#d50a7798145cba4b4eddd4823f7e0f9e') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
 #chessBoard {
   padding: 0px;
   border-collapse: collapse;
   border:1px solid #ccc;
+  font-family: Maya;
   /*background-image: url(../images/background.jpg);*/
   background-size: 100%;
   margin:0 auto;
@@ -12,12 +24,12 @@
   width: 50px;
   text-align: center;
   padding: 0;
-  font-size: 25px;
+  font-size: 33px;
   border: none;
 } .cell span {
   display: block;
   box-sizing: border-box;
-  padding-top: 5px;
+  padding-top: 8px;
   height: 50px;
   width: 50px
 }
@@ -32,5 +44,5 @@
 }
 .selected span {
   border: 1px solid #3498DB;
-  padding-top: 4px;
+  padding-top: 7px;
 }
