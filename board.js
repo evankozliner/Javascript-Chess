@@ -11,7 +11,7 @@ function Board(style) {
  */
 Board.prototype.draw = function() {
   var chessBoard = document.getElementById("chessBoard");
-  var cell = this.dimension / 8;
+  var cell = this.dimension / this.size;
   var columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
   for (var i = 0; i < this.size; i++) {
     var row = document.createElement("tr");
@@ -39,7 +39,7 @@ Board.prototype.draw = function() {
     };
   };
   return this;
-}
+};
 
 /**
  * placePieces sets the pieces on the board in preparation for
@@ -58,7 +58,7 @@ Board.prototype.placePieces = function(pieces) {
     placePiece(piece, black);
   }
   return this;
-}
+};
 
 /**
  * placePiece is a helper function for Board.prototype.placePieces
