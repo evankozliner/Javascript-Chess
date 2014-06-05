@@ -11,8 +11,7 @@
   width: 50px;
   text-align: center;
   font-size: 25px;
-}
-.cell span {
+} .cell span {
   display: block;
   margin-top: -3px
 }

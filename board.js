@@ -1,7 +1,6 @@
 function Board(style) {
   this.size = 8;
   this.style = style;
-  //screen size later
   this.dimension = 400;
 }
 
