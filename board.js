@@ -1,3 +1,8 @@
+/**
+ * Board represents the chess board
+ *
+ * @param {string} style
+ */
 function Board(style) {
   this.size = 8;
   this.style = style;

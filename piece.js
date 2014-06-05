@@ -1,3 +1,8 @@
+/**
+ * Piece represents a piece on the board
+ *
+ * @param {array} properties
+ */
 function Piece(properties) {
   this.team = properties[0];
   this.type = properties[1];
@@ -7,6 +12,12 @@ function Piece(properties) {
   }
 }
 
+/**
+ * potentialMoves returns an array of cell IDs. Each cell ID represents a cell
+ * that this piece can move to
+ *
+ * @return {array}
+ */
 Piece.prototype.potentialMoves = function() {
   switch (this.type) {
     case 'king':

@@ -27,9 +27,23 @@
   });
 })();
 
+/**
+ * hasClass checks to see if the specified elements has the specified class
+ *
+ * @param {element} ele
+ * @param {string} klass
+ * @return {boolean}
+ */
 function hasClass(ele, klass) {
   return ele.className.indexOf(klass) > -1;
 }
+
+/**
+ * whichTeam returns the team the piece in the specified cell belongs to
+ *
+ * @param {element} cell
+ * @return {string}
+ */
 function whichTeam(cell) {
   if (cell.childNodes['0']) {
     return cell.childNodes['0'].id.indexOf('white') > -1 ? 'white' : 'black';
@@ -37,6 +51,14 @@ function whichTeam(cell) {
     return 'neutral';
   }
 }
+
+/**
+ * findPotentialMoves returns an array of cell IDs. Each cell ID represents a cell
+ * that the specified piece can move to
+ *
+ * @param {element} piece
+ * @return {array}
+ */
 function findPotentialMoves(piece) {
   var properties = piece.id.split('-');
   var piece = new Piece(properties);
