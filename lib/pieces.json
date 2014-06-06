@@ -162,5 +162,13 @@ var pieces = {
       "figure": "o",
       "position": "h7"
     }
+  },
+  "graveyard": {
+    "white": {
+
+    },
+    "black": {
+      
+    }
   }
 }
