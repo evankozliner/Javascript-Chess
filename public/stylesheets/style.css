@@ -52,6 +52,7 @@
 .selected span {
   border: 2px solid #3498DB;
   padding-top: 6px;
+  color: transparent;
 }
 .draggedOver {
   background-color: #31CD73;
