@@ -3,16 +3,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Javascript Chess</title>
+  <link rel="stylesheet" href="public/stylesheets/ionicons.min.css">
   <link rel="stylesheet" href="public/stylesheets/style.css">
 </head>
 <body>
-  <style>
-  .dragImage {
-    width: 50px;
-    height: 50px;
-  }
-  </style>
+  <h1 id="title">aGameOfChess</h1>
   <table id="chessBoard"></table>
+  <div id="graveyard">
+    <h1>Graveyard</h1>
+    <div id="white-graveyard" class="graveyard-container">
+      <div class="team-indicator" id="white-indicator"></div>
+      <div class="graveyard-placeholder">no pieces taken</div>
+    </div>
+    <div id="black-graveyard" class="graveyard-container">
+      <div class="team-indicator" id="black-indicator"></div>
+      <div class="graveyard-placeholder">no pieces taken</div>
+    </div>
+  </div>
   <script src="lib/pieces.json"></script>
   <script src="lib/models/piece.js"></script>
   <script src="lib/models/board.js"></script>
