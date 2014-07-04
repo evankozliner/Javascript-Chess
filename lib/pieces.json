@@ -3,7 +3,8 @@ var pieces = {
     "king": {
       "id": "white-king",
       "figure": "k",
-      "position": "e1"
+      "position": "e1",
+      "hasMoved": "false"
     },
     "queen": {
       "id": "white-queen",
@@ -33,59 +34,70 @@ var pieces = {
     "rook1": {
       "id": "white-rook-1",
       "figure": "r",
-      "position": "a1"
+      "position": "a1",
+      "hasMoved": "false"
     },
     "rook2": {
       "id": "white-rook-2",
       "figure": "r",
-      "position": "h1"
+      "position": "h1",
+      "hasMoved": "false"
     },
     "pawn1": {
       "id": "white-pawn-1",
       "figure": "p",
-      "position": "a2"
+      "position": "a2",
+      "hasMoved": "false"
     },
     "pawn2": {
       "id": "white-pawn-2",
       "figure": "p",
-      "position": "b2"
+      "position": "b2",
+      "hasMoved": "false"
     },
     "pawn3": {
       "id": "white-pawn-3",
       "figure": "p",
-      "position": "c2"
+      "position": "c2",
+      "hasMoved": "false"
     },
     "pawn4": {
       "id": "white-pawn-4",
       "figure": "p",
-      "position": "d2"
+      "position": "d2",
+      "hasMoved": "false"
     },
     "pawn5": {
       "id": "white-pawn-5",
       "figure": "p",
-      "position": "e2"
+      "position": "e2",
+      "hasMoved": "false"
     },
     "pawn6": {
       "id": "white-pawn-6",
       "figure": "p",
-      "position": "f2"
+      "position": "f2",
+      "hasMoved": "false"
     },
     "pawn7": {
       "id": "white-pawn-7",
       "figure": "p",
-      "position": "g2"
+      "position": "g2",
+      "hasMoved": "false"
     },
     "pawn8": {
       "id": "white-pawn-8",
       "figure": "p",
-      "position": "h2"
+      "position": "h2",
+      "hasMoved": "false"
     }
   },
   "black": {
     "king": {
       "id": "black-king",
       "figure": "l",
-      "position": "e8"
+      "position": "e8",
+      "hasMoved": "false"
     },
     "queen": {
       "id": "black-queen",
@@ -115,52 +127,62 @@ var pieces = {
     "rook1": {
       "id": "black-rook-1",
       "figure": "t",
-      "position": "a8"
+      "position": "a8",
+      "hasMoved": "false"
     },
     "rook2": {
       "id": "black-rook-2",
       "figure": "t",
-      "position": "h8"
+      "position": "h8",
+      "hasMoved": "false"
     },
     "pawn1": {
       "id": "black-pawn-1",
       "figure": "o",
-      "position": "a7"
+      "position": "a7",
+      "hasMoved": "false"
     },
     "pawn2": {
       "id": "black-pawn-2",
       "figure": "o",
-      "position": "b7"
+      "position": "b7",
+      "hasMoved": "false"
     },
     "pawn3": {
       "id": "black-pawn-3",
       "figure": "o",
-      "position": "c7"
+      "position": "c7",
+      "hasMoved": "false"
     },
     "pawn4": {
       "id": "black-pawn-4",
       "figure": "o",
-      "position": "d7"
+      "position": "d7",
+      "hasMoved": "false"
     },
     "pawn5": {
       "id": "black-pawn-5",
       "figure": "o",
-      "position": "e7"
+      "position": "e7",
+      "hasMoved": "false"
     },
     "pawn6": {
       "id": "black-pawn-6",
       "figure": "o",
-      "position": "f7"
+      "position": "f7",
+      "hasMoved": "false"
     },
     "pawn7": {
       "id": "black-pawn-7",
       "figure": "o",
-      "position": "g7"
+      "position": "g7",
+      "hasMoved": "false"
     },
     "pawn8": {
       "id": "black-pawn-8",
       "figure": "o",
-      "position": "h7"
+      "position": "h7",
+      "hasMoved": "false"
     }
   },
   "graveyard": {
