@@ -31,8 +31,10 @@ app.set('view engine', 'jade');
 
 // app.set('view options', { layout: false });
 
+// Sets the port
 app.set('port', process.env.PORT || 80);
 
+// Handles server errors
 app.use(function(req, res, next) {
   domain = require('domain').create();
   domain.on('error', function(err) {
@@ -60,6 +62,7 @@ app.use(function(req, res, next) {
   domain.run(next);
 });
 
+// Set the logs
 switch(app.get('env')) {
   case 'development':
     app.use(require('morgan')('dev'));
@@ -69,6 +72,7 @@ switch(app.get('env')) {
     break;
 }
 
+// Configure express
 app.use(methodOverride());
 app.use(cookieParser(credentials.cookieSecret));
 app.use(session({secret: credentials.sessionSecret, saveUninitialized: true, resave: true}));
@@ -85,6 +89,8 @@ var options = {
      socketOptions: { keepAlive: 1 }
   }
 };
+
+// Interface node and mongoose
 switch(app.get('env')) {
   case 'development':
     mongoose.connect('mongodb://localhost/test', options);
@@ -96,6 +102,7 @@ switch(app.get('env')) {
     throw new Error('Unknown execution environment: ' + app.get('env'));
 }
 
+// From TwitterStrategy = require('passport-twitter').Strategy,
 passport.use(new TwitterStrategy({
     consumerKey: credentials.twitter.key,
     consumerSecret: credentials.twitter.secret,
@@ -116,6 +123,7 @@ passport.use(new TwitterStrategy({
           done(null, user);
         });
       }
+      // Initialized Above
       userOauth.token = token;
       userOauth.token_secret = tokenSecret;
     });
@@ -132,6 +140,7 @@ passport.deserializeUser(function(uid, done) {
   });
 });
 
+// Routes
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/', failureRedirect: '/login' }));
 app.get('/logout', function(req, res) {
@@ -140,7 +149,9 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/', loggedIn, function (req, res) {
+  //Puts into the session object so that it can be used in the controller
   req.session.oauth = userOauth;
+  // the index method is available because it was defined with exports.index in mainController
   mainController.index(req, res);
 });
 app.get('/login', mainController.login);
@@ -172,6 +183,7 @@ io.on('connection', function(socket){
 
 // functions
 function loggedIn(req, res, next) {
+  // There's a session
   if (req.user) {
     next();
   } else {
