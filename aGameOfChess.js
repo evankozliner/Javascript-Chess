@@ -144,6 +144,9 @@ app.get('/', loggedIn, function (req, res) {
   mainController.index(req, res);
 });
 app.get('/login', mainController.login);
+app.get('/game', function(req, res) {
+  res.sendfile('./static/index.html');
+});
 
 app.use(function(req, res, next) {
   res.status(404);

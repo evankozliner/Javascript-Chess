@@ -456,7 +456,7 @@ function getFigureImage(figure) {
   if (!isNaN(parseInt(type.charAt(type.length - 1)))) {
     type = type.substring(0, type.length - 1);
   }
-  return 'public/images/' + figureProperties.team + '-' + type + '.png';
+  return '/images/' + figureProperties.team + '-' + type + '.png';
 }
 
 //TODO: If we get the time we should change the setters to use the piece instead of figure properties
