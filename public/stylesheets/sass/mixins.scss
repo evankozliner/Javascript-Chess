@@ -1,0 +1,57 @@
+@mixin responsiveMin($width) {
+  @if $width == large {
+    @media (min-width: $width-large) {
+      @content;
+    }
+  } @else if $width == medium {
+    @media (min-width: $width-medium) {
+      @content;
+    }
+  } @else if $width == small {
+    @media (min-width: $width-small) {
+      @content;
+    }
+  } @else if $width == xsmall {
+    @media (min-width: $width-xsmall) {
+      @content;
+    }
+  }
+}
+@mixin responsiveMax($width) {
+  @if $width == large {
+    @media (max-width: $width-large) {
+      @content;
+    }
+  } @else if $width == medium {
+    @media (max-width: $width-medium) {
+      @content;
+    }
+  } @else if $width == small {
+    @media (max-width: $width-small) {
+      @content;
+    }
+  } @else if $width == xsmall {
+    @media (max-width: $width-xsmall) {
+      @content;
+    }
+  }
+}
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+@mixin textShadow($x, $y, $blur, $color) {
+  -webkit-text-shadow: $x $y $blur $color;
+  -moz-text-shadow: $x $y $blur $color;
+  -ms-text-shadow: $x $y $blur $color;
+  -o-text-shadow: $x $y $blur $color;
+  text-shadow: $x $y $blur $color;
+}

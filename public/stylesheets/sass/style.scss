@@ -1,0 +1,135 @@
+@import "dynamic.scss";
+
+@font-face {
+  font-family: 'Maya';
+  src: url('../fonts/MAYAFONT.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MAYAFONT.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MAYAFONT.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/MAYAFONT.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/MAYAFONT.svg#d50a7798145cba4b4eddd4823f7e0f9e') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+@font-face {
+  font-family: 'Aileron Light';
+  src: url('../fonts/Aileron-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Aileron-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Aileron-Light.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Aileron-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Aileron-Light.svg#754f618d23a70bbeb438a8910355b3ab') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  200;
+}
+body {
+  background-color: #eee;
+}
+#chessBoard {
+  padding: 0px;
+  border-collapse: collapse;
+  border:1px solid #ccc;
+  font-family: Maya;
+  background-size: 100%;
+  margin: 20 auto;
+  color: #444;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+}
+.cell {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 0;
+  font-size: 33px;
+  border: none;
+  -webkit-transition: 200;
+  -moz-transition: 200;
+  -o-transition: 200;
+  -ms-transition: 200;
+} .cell span {
+  display: block;
+  box-sizing: border-box;
+  padding-top: 8px;
+  height: 50px;
+  width: 50px;
+  -webkit-transition: 200;
+  -moz-transition: 200;
+  -o-transition: 200;
+  -ms-transition: 200;
+}
+.dark {
+  background-color: rgba(204, 204, 204, 1);
+}
+.light {
+  background-color: rgba(255, 255, 255, 1);
+}
+.hasPiece {
+  cursor: pointer;
+}
+.selected span {
+  border: 2px solid #3498DB;
+  padding-top: 6px;
+  color: transparent;
+}
+.draggedOver {
+  background-color: #31CD73;
+}
+#graveyard {
+  max-width: 402px;
+  position: relative;
+  margin: 20 auto;
+  font-family: 'Aileron Light', sans-serif;
+  color: #444;
+}
+#graveyard h1 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #CCC;
+}
+#graveyard h2 {
+  font-size: 15px
+}
+#graveyard h1, h2 {
+  font-weight: 300;
+}
+#graveyard .deadFigure {
+  float: left;
+  font-family: Maya;
+  font-size: 23px;
+  padding-top: 5px;
+  position: relative;
+  margin-left: 10px;
+}
+.graveyard-container {
+  width: 100%;
+  display: inline-block;
+  margin-top: 5px;
+  position: relative;
+}
+.graveyard-placeholder {
+  margin-left: 10px;
+  float: left;
+  padding-top: 5px;
+}
+#title {
+  font-family: 'Aileron Light', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  max-width: 402px;
+  position: relative;
+  margin: 20 auto;
+}
+.team-indicator {
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid #CCC;
+  display: block;
+}
+#black-indicator {
+  background-color: #444;
+}
+#white-indicator {
+  background-color: white;
+}

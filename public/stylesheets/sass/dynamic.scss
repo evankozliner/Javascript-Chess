@@ -1,0 +1,198 @@
+@import "normalize.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+//Borders and padding are drawn inside the set width of your content. The margin is drawn outside
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//Clearfix
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+//Styles
+.container {
+  margin: 0 auto;
+  max-width: $width-large;
+  width: 90%;
+}
+section, header, footer {
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+// custom elements
+img.responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.column {
+  float: left;
+}
+//full
+.column.full { width: 100% }
+//halves
+.column.half { width: 50% }
+//thirds
+.column.third { width: 33.333% }
+.column.two-thirds { width: 66.666% }
+//fourths
+.column.fourth { width: 25% }
+.column.two-fourths { @extend .column.half; }
+.column.three-fourths { width: 75% }
+//fifths
+.column.fifth { width: 20% }
+.column.two-fifths { width: 40% }
+.column.three-fifths { width: 60% }
+.column.four-fifths { width: 80% }
+//sixths
+.column.sixth { width: 16.666% }
+.column.two-sixths { @extend .column.third; }
+.column.three-sixths { @extend .column.half; }
+.column.four-sixths { @extend .column.two-thirds; }
+.column.five-sixths { width: 83.333% }
+//verticle re-ordering
+.column.flow-opposite { float: right }
+
+// columns in percentages
+.column.percent-1 { width: 1% }
+.column.percent-2 { width: 2% }
+.column.percent-3 { width: 3% }
+.column.percent-4 { width: 4% }
+.column.percent-5 { width: 5% }
+.column.percent-6 { width: 6% }
+.column.percent-7 { width: 7% }
+.column.percent-8 { width: 8% }
+.column.percent-9 { width: 9% }
+.column.percent-10 { width: 10% }
+.column.percent-11 { width: 11% }
+.column.percent-12 { width: 12% }
+.column.percent-13 { width: 13% }
+.column.percent-14 { width: 14% }
+.column.percent-15 { width: 15% }
+.column.percent-16 { width: 16% }
+.column.percent-17 { width: 17% }
+.column.percent-18 { width: 18% }
+.column.percent-19 { width: 19% }
+.column.percent-20 { width: 20% }
+.column.percent-21 { width: 21% }
+.column.percent-22 { width: 22% }
+.column.percent-23 { width: 23% }
+.column.percent-24 { width: 24% }
+.column.percent-25 { width: 25% }
+.column.percent-26 { width: 26% }
+.column.percent-27 { width: 27% }
+.column.percent-28 { width: 28% }
+.column.percent-29 { width: 29% }
+.column.percent-30 { width: 30% }
+.column.percent-31 { width: 31% }
+.column.percent-32 { width: 32% }
+.column.percent-33 { width: 33% }
+.column.percent-34 { width: 34% }
+.column.percent-35 { width: 35% }
+.column.percent-36 { width: 36% }
+.column.percent-37 { width: 37% }
+.column.percent-38 { width: 38% }
+.column.percent-39 { width: 39% }
+.column.percent-40 { width: 40% }
+.column.percent-41 { width: 41% }
+.column.percent-42 { width: 42% }
+.column.percent-43 { width: 43% }
+.column.percent-44 { width: 44% }
+.column.percent-45 { width: 45% }
+.column.percent-46 { width: 46% }
+.column.percent-47 { width: 47% }
+.column.percent-48 { width: 48% }
+.column.percent-49 { width: 49% }
+.column.percent-50 { width: 50% }
+.column.percent-51 { width: 51% }
+.column.percent-52 { width: 52% }
+.column.percent-53 { width: 53% }
+.column.percent-54 { width: 54% }
+.column.percent-55 { width: 55% }
+.column.percent-56 { width: 56% }
+.column.percent-57 { width: 57% }
+.column.percent-58 { width: 58% }
+.column.percent-59 { width: 59% }
+.column.percent-60 { width: 60% }
+.column.percent-61 { width: 61% }
+.column.percent-62 { width: 62% }
+.column.percent-63 { width: 63% }
+.column.percent-64 { width: 64% }
+.column.percent-65 { width: 65% }
+.column.percent-66 { width: 66% }
+.column.percent-67 { width: 67% }
+.column.percent-68 { width: 68% }
+.column.percent-69 { width: 69% }
+.column.percent-70 { width: 70% }
+.column.percent-71 { width: 71% }
+.column.percent-72 { width: 72% }
+.column.percent-73 { width: 73% }
+.column.percent-74 { width: 74% }
+.column.percent-75 { width: 75% }
+.column.percent-76 { width: 76% }
+.column.percent-77 { width: 77% }
+.column.percent-78 { width: 78% }
+.column.percent-79 { width: 79% }
+.column.percent-80 { width: 80% }
+.column.percent-81 { width: 81% }
+.column.percent-82 { width: 82% }
+.column.percent-83 { width: 83% }
+.column.percent-84 { width: 84% }
+.column.percent-85 { width: 85% }
+.column.percent-86 { width: 86% }
+.column.percent-87 { width: 87% }
+.column.percent-88 { width: 88% }
+.column.percent-89 { width: 89% }
+.column.percent-90 { width: 90% }
+.column.percent-91 { width: 91% }
+.column.percent-92 { width: 92% }
+.column.percent-93 { width: 93% }
+.column.percent-94 { width: 94% }
+.column.percent-95 { width: 95% }
+.column.percent-96 { width: 96% }
+.column.percent-97 { width: 97% }
+.column.percent-98 { width: 98% }
+.column.percent-99 { width: 99% }
+.column.percent-100 { width: 100% }
+
+// row collapse
+@include responsiveMax(xsmall) {
+  .row.collapse-xsmall > .column {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(small) {
+  .row.collapse-small > .column {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(medium) {
+  .row.collapse-medium > .column {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(large) {
+  .row.collapse-large > .column {
+    width: 100%;
+  }
+}
