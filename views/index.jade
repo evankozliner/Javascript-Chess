@@ -3,12 +3,16 @@ extends layout
 block content
   section
     .container
-      #account.row.clearfix
-        img(src=image)#avatar.responsive
-        a(href="/logout") logout
       - if (friends)
-        #friends.row.clearfix
-          ul.column.full
+        .row.clearfix.collapse-medium
+          #dashboard.column.percent-40
+            .row.clearfix
+              #account.column.full.transparent-container
+                img(src=image)#avatar.responsive
+                a(href="/logout") logout
+              #games.column.full.transparent-container
+              #favorites.column.full.transparent-container
+          ul#friends.column.percent-60
             li#search-friends.row.clearfix
               .column.percent-93#search
                 input(placeholder="Search the #{friendsCount} friends you follow")=friendsCount + 'friends'
