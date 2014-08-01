@@ -5,6 +5,8 @@ var userSchema = mongoose.Schema({
   uid: String,
   name: String,
   image: String,
+  friends: [],
+  hasFriends: {type: Boolean, default: false},
   created: {type: Date, default: Date.now}
 });
 

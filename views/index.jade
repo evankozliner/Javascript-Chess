@@ -1,7 +1,19 @@
 extends layout
 
 block content
-  p yo wassup
-  img(src=image)
-  div
-    a(href="/logout") logout
+  section
+    .container
+      img(src=image)
+      div
+        a(href="/logout") logout
+        - if (friends)
+          #friends.row.clearfix
+            a(href="/refresh", title="refresh") refresh
+            ul.column.full
+              li
+                p=friendsCount + 'friends'
+              - for friend, i in friends
+                li.friend
+                  span=friend.name
+        - else
+          p You have exceeded the rate limit

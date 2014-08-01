@@ -154,6 +154,10 @@ app.get('/', loggedIn, function (req, res) {
   // the index method is available because it was defined with exports.index in mainController
   mainController.index(req, res);
 });
+app.get('/refresh', loggedIn, function(req, res) {
+  req.session.oauth = userOauth;
+  mainController.refresh(req, res);
+});
 app.get('/login', mainController.login);
 app.get('/game', function(req, res) {
   res.sendfile('./static/index.html');

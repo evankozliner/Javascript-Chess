@@ -133,3 +133,21 @@ body {
 #white-indicator {
   background-color: white;
 }
+#friends {
+  position: relative;
+  margin: 20px auto;
+  max-width: 500px;
+  ul {
+    list-style-type: none;
+    border-top: $border-color;
+    border-right: $border-color;
+    border-left: $border-color;
+    padding-left: 0;
+    li {
+      background-color: white;
+      padding: 5px 10px;
+      font-family: 'Aileron Light';
+      border-bottom: $border-color;
+    }
+  }
+}
