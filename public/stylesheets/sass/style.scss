@@ -144,7 +144,8 @@ body {
     border-right: $border-color;
     border-left: $border-color;
     padding-left: 0;
-    @include rounded(5px);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     li:first-child {
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
@@ -154,6 +155,7 @@ body {
       padding: 7px 10px;
       font-family: 'Aileron-Light', sans-serif;
       border-bottom: $border-color;
+      @include transition(200ms);
     }
   }
   #search-friends {

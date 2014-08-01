@@ -875,11 +875,8 @@ body {
     border-right: 1px solid #cccccc;
     border-left: 1px solid #cccccc;
     padding-left: 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px; }
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; }
     #friends ul li:first-child {
       border-top-right-radius: 5px;
       border-top-left-radius: 5px; }
@@ -887,7 +884,11 @@ body {
       background-color: white;
       padding: 7px 10px;
       font-family: 'Aileron-Light', sans-serif;
-      border-bottom: 1px solid #cccccc; }
+      border-bottom: 1px solid #cccccc;
+      -webkit-transition: 200ms;
+      -moz-transition: 200ms;
+      -o-transition: 200ms;
+      -ms-transition: 200ms; }
   #friends #search-friends {
     background-color: #eee;
     background-image: linear-gradient(#f6f6f6, #f0f0f0);

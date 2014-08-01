@@ -62,3 +62,9 @@
   -o-text-shadow: $x $y $blur $color;
   text-shadow: $x $y $blur $color;
 }
+@mixin transition($time) {
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -o-transition: $time;
+  -ms-transition: $time;
+}
