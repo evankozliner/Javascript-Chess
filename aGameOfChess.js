@@ -160,7 +160,7 @@ app.get('/refresh', loggedIn, function(req, res) {
 });
 app.get('/login', mainController.login);
 app.get('/game', function(req, res) {
-  res.sendfile('./static/index.html');
+  res.render('game', {title: 'aGameOfChess'});
 });
 
 app.use(function(req, res, next) {

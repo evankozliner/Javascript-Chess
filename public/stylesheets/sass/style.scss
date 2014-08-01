@@ -25,7 +25,6 @@
 }
 body {
   background-color: #f9f9f9;
-  background-image: url(/images/backgrounds/background-1.png);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -34,7 +33,7 @@ body {
   border-collapse: collapse;
   font-family: Maya;
   background-size: 100%;
-  margin: 20 auto;
+  margin: 20px auto;
   color: #444;
   box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
 }
@@ -85,7 +84,7 @@ body {
 #graveyard {
   max-width: 402px;
   position: relative;
-  margin: 20 auto;
+  margin: 20px auto;
   font-family: 'Aileron Light', sans-serif;
   color: #444;
   h1 {
@@ -128,8 +127,8 @@ body {
   font-size: 20px;
   max-width: 402px;
   position: relative;
-  margin: 20 auto;
-  color: white;
+  margin: 20px auto;
+  color: $textColor;
 }
 .team-indicator {
   float: left;

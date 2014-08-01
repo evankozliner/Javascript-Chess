@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1#title.transparent-container aGameOfChess
+  table#chessBoard
+  #graveyard.transparent-container
+    h1 Graveyard
+    #white-graveyard.graveyard-container
+      #white-indicator.team-indicator
+      .graveyard-placeholder no pieces taken
+    #black-graveyard.graveyard-container
+      #black-indicator.team-indicator
+      .graveyard-placeholder no pieces taken
+  script(src='/javascripts/pieces.json')
+  script(src='/javascripts/models/piece.js')
+  script(src='/javascripts/models/board.js')
+  script(src='/javascripts/chess.js')
