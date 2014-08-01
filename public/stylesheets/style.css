@@ -4,6 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -753,7 +754,7 @@ img.responsive {
   font-style: normal;
   font-weight: 200; }
 body {
-  background-color: #eee; }
+  background-color: #f9f9f9; }
 
 #chessBoard {
   padding: 0px;
@@ -843,7 +844,7 @@ body {
   padding-top: 5px; }
 
 #title {
-  font-family: 'Aileron Light', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 20px;
   max-width: 402px;
@@ -873,9 +874,42 @@ body {
     border-top: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
     border-left: 1px solid #cccccc;
-    padding-left: 0; }
+    padding-left: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }
+    #friends ul li:first-child {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px; }
     #friends ul li {
       background-color: white;
-      padding: 5px 10px;
-      font-family: 'Aileron Light';
+      padding: 7px 10px;
+      font-family: 'Aileron-Light', sans-serif;
       border-bottom: 1px solid #cccccc; }
+  #friends #search-friends {
+    background-color: #eee;
+    background-image: linear-gradient(#f6f6f6, #f0f0f0);
+    background-repeat: repeat-x;
+    padding: 10px 15px; }
+    #friends #search-friends input {
+      width: 100%;
+      height: 100%;
+      padding: 5px 10px;
+      text-align: center;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      border: none;
+      position: relative; }
+    #friends #search-friends input:focus {
+      outline: none;
+      top: -1px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }

@@ -10,8 +10,8 @@ block content
           #friends.row.clearfix
             a(href="/refresh", title="refresh") refresh
             ul.column.full
-              li
-                p=friendsCount + 'friends'
+              li#search-friends
+                input(placeholder="Search the #{friendsCount} friends you follow")=friendsCount + 'friends'
               - for friend, i in friends
                 li.friend
                   span=friend.name
