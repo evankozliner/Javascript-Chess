@@ -3,17 +3,27 @@ extends layout
 block content
   section
     .container
-      img(src=image)
-      div
+      #account.row.clearfix
+        img(src=image)#avatar.responsive
         a(href="/logout") logout
-        - if (friends)
-          #friends.row.clearfix
-            a(href="/refresh", title="refresh") refresh
-            ul.column.full
-              li#search-friends
+      - if (friends)
+        #friends.row.clearfix
+          ul.column.full
+            li#search-friends.row.clearfix
+              .column.percent-93#search
                 input(placeholder="Search the #{friendsCount} friends you follow")=friendsCount + 'friends'
-              - for friend, i in friends
-                li.friend
-                  span=friend.name
-        - else
-          p You have exceeded the rate limit
+              a#refresh.column.percent-7(href="/refresh", title="refresh")
+                span.fa.fa-refresh
+            - for friend, i in friends
+              li(data-uid="#{friend.id}").friend.row.clearfix.collapse-xsmall
+                .column.percent-75.id=friend.name + ' | @' + friend.screen_name
+                .column.percent-25
+                  .row.clearfix
+                    .column.third.icon
+                      span(title="favorite this user").fa.fa-star-o
+                    .column.third.icon
+                      span(title="send game invite").fa.fa-send-o
+                    .column.third.icon
+                      span(title="expand details").fa.fa-plus
+      - else
+        p You have exceeded the rate limit
