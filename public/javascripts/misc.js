@@ -107,11 +107,12 @@
           $favorite.fadeOut(200)
           setTimeout(function() {
             $favorite.remove();
-            if ($('#favorites-list').length === 1) {
+            if ($('#favorites-list').children().length === 1) {
               $('#favorites-list').hide();
               $('#no-favorites').show();
             }
           }, 200);
+          prepareFavoriteButtons();
         }
         AJAX.unfavoriteFriend(friendId, cb);
       }
