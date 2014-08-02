@@ -43,11 +43,11 @@ exports.index = function(req, res) {
         user.save(function(err) {
           if(err) throw err;
         });
-        res.render('index', {title: 'aGameOfChess', image: user.image, friends: user.friends, friendsCount: user.friends.length});
+        res.render('index', {title: 'aGameOfChess', user: user, friends: user.friends, friendsCount: user.friends.length, favorites: user.favorites});
       }
       getFriends(next);
     } else {
-      res.render('index', {title: 'aGameOfChess', image: user.image, friends: user.friends, friendsCount: user.friends.length});
+      res.render('index', {title: 'aGameOfChess', user: user, friends: user.friends, friendsCount: user.friends.length, favorites: user.favorites});
     }
   });
 };

@@ -7,15 +7,74 @@ block content
         .row.clearfix.collapse-medium
           #dashboard.column.percent-40
             .row.clearfix
-              #account.column.full.transparent-container
-                img(src=image)#avatar.responsive
-                a(href="/logout") logout
-              #games.column.full.transparent-container
-              #favorites.column.full.transparent-container
+              #account.column.full.transparent-container.dashboard-item
+                #account-info.row.clearfix
+                  .column.percent-20
+                    img(src=user.image)#avatar.responsive
+                  .column.percent-70.info
+                    div=user.name
+                  .column.percent-10.info
+                    a(href="/logout")#logout
+                      span.fa.fa-sign-out
+                #account-details.collapse-xsmall
+                  .column.third
+                    span Total:&nbsp;
+                    span=user.finishedGames.length
+                  .column.third#won
+                    span Won:&nbsp;
+                    span=user.gamesWon
+                  .column.third#lost
+                    span Lost:&nbsp;
+                    span=user.gamesLost
+              #games.column.full.transparent-container.dashboard-item
+                .row.clearfix#active-games
+                  h3.column.full
+                    span.dot
+                    | Active Games
+                  - if (user.activeGames.length)
+                    ul#active-games-list
+                  - else
+                    p.column.full You have no active games.
+                .row.clearfix#pending-games
+                  h3.column.full
+                    span.dot
+                    | Pending Games
+                  - if (user.pendingGames.length)
+                    ul#pending-games-list
+                  - else
+                    p.column.full You have no pending games.
+                .row.clearfix#finished-games
+                  h3.column.full
+                    span.dot
+                    | Finished Games
+                  - if (user.finishedGames.length)
+                    ul#finished-games-list
+                  - else
+                    p.column.full You have not finished any games yet.
+              #favorites.column.full.transparent-container.dashboard-item
+                .row.clearfix
+                  h3.column.full
+                    span.fa.fa-star &nbsp;
+                    | Favorite Friends
+                  - if (favorites.length)
+                    ul#favorites-list.column.full
+                      li#search-favorites.row.clearfix
+                        input(placeholder="Search your favorite friends")
+                      - for favorite, i in favorites
+                        li.favorite.row.clearfix
+                          .column.percent-75.id=favorite.name
+                          .column.percent-25
+                            .row.clearfix
+                              .column.third.icon
+                                span(title="favorite this user").fa.fa-star-o
+                              .column.third.icon
+                                span(title="send game invite").fa.fa-send-o
+                  - else
+                    p.column.full You have not favorited any friends yet.
           ul#friends.column.percent-60
             li#search-friends.row.clearfix
               .column.percent-93#search
-                input(placeholder="Search the #{friendsCount} friends you follow")=friendsCount + 'friends'
+                input(placeholder="Search the #{friendsCount} friends you follow")
               a#refresh.column.percent-7(href="/refresh", title="refresh")
                 span.fa.fa-refresh
             - for friend, i in friends

@@ -3,4 +3,12 @@ extends layout
 block content
   section
     .container
-      a(href="/auth/twitter" title="twitter login") Sign in with Twitter
+      #description.row.clearfix.transparent-container
+        .column.full
+          h2 Welcome to aGameOfChess
+          p Play a game of chess with a twitter friend in real time.
+          p We hope you enjoy the peaceful anime landscapes!
+      #login.row.clearfix.transparent-container
+        a(href="/auth/twitter" title="twitter login").column.full
+          span.fa.fa-twitter
+          | &nbsp;&nbsp;Sign in with Twitter
