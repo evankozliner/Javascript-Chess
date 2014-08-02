@@ -68,6 +68,9 @@ body {
 .hasPiece {
   cursor: pointer;
 }
+.hidden {
+  display: none;
+}
 .selected span {
   border: 2px solid #3498DB;
   padding-top: 6px;
@@ -181,15 +184,6 @@ body {
 #white-indicator {
   background-color: white;
 }
-.icon {
-  margin-top: 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px;
-}
-.icon span:hover {
-  font-size: 19px;
-}
 .fa-star-o, .fa-star {
   color: $yellow;
 }
@@ -290,25 +284,71 @@ body {
     }
   }
   #favorites {
+    #favorites-title {
+      background-image: linear-gradient(#f6f6f6, #f0f0f0);
+      padding: 15px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
     #favorites-list {
       list-style-type: none;
       padding-left: 0;
       margin-top: 0;
+      margin-bottom: 0;
+      position: relative;
+      .favorite {
+        position: relative;
+        padding: 5px 10px;
+        border-bottom: $grayBorder;
+        font-family: 'Aileron-Light', sans-serif;
+        color: $textColor;
+        @include transition(200ms);
+        .icon span {
+          cursor: pointer;
+        }
+      }
+      .favorite:hover {
+        margin: 5px -10px;
+        padding: 5px 20px;
+        font-size: 18px;
+        background-color: rgba(255,255,255,0.95);
+        @include rounded(3px);
+        border-bottom: 1px solid #bbb;
+        @include boxShadow(0, 1px, 10px, rgba(0,0,0,0.5));
+      }
+      .favorite:last-child {
+        border-bottom: none;
+      }
+    }
+    #no-favorites {
+      position: relative;
+      padding: 5px 10px;
+      border-bottom: $grayBorder;
+      background-color: rgba(255,255,255,0.85);
+      margin-top: 0;
+      font-family: 'Aileron-Light', sans-serif;
+      color: $textColor;
+      @include transition(200ms);
     }
     #search-favorites {
       font-family: 'Aileron-Light', sans-serif;
       input {
         width: 100%;
-        border: none;
         padding: 5px 10px;
-        border-right: $grayBorder;
-        border-left: $grayBorder;
+        border-top: none;
+        border-right: none;
+        border-left: none;
         border-bottom: $grayBorder;
       }
       input:focus {
         outline: none;
       }
     }
+  }
+  #favorites:hover {
+    margin-top: 0px;
+    background: none;
+    @include boxShadow(0,0,0,rgba(0,0,0,0));
   }
 }
 #dashboard > .row > .column {
@@ -324,6 +364,10 @@ body {
   li {
     .id {
       text-align: center;
+      a {
+        color: $blue;
+        text-decoration: none;
+      }
     }
     cursor: pointer;
     color: $textColor;
@@ -333,14 +377,32 @@ body {
     font-family: 'Aileron-Light', sans-serif;
     border-bottom: $border-color;
     @include transition(200ms);
+    .icon {
+      text-align: right;
+      cursor: pointer;
+      font-size: 18px;
+    }
   }
   li:hover {
     background-color: rgba(255,255,255,0.95);
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+    @include boxShadow(0, 1px, 10px, rgba(0,0,0,0.5));
     z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid #bbb;
+    padding: 15px 25px;
+    font-size: 18px;
+    @include rounded(3px);
     position: relative;
     margin: 10px -10px;
+    .icon {
+      text-align: right;
+      cursor: pointer;
+      font-size: 20px;
+      margin-bottom: -2px;
+    }
+    .icon:hover {
+      font-size: 22px;
+      margin-top: -2px;
+    }
   }
   #refresh {
     font-size: 20px;
@@ -380,6 +442,9 @@ body {
       top: -1px;
       @include boxShadow(0, 1px, 1px, rgba(0,0,0,0.5));
     }
+  }
+  #search-friends:hover {
+    @include rounded(5px);
   }
 }
 

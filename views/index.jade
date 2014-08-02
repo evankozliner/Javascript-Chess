@@ -51,26 +51,24 @@ block content
                     ul#finished-games-list
                   - else
                     p.column.full You have not finished any games yet.
-              #favorites.column.full.transparent-container.dashboard-item
+              #favorites.column.full.dashboard-item.clearfix
                 .row.clearfix
-                  h3.column.full
+                  h3.column.full#favorites-title
                     span.fa.fa-star &nbsp;
                     | Favorite Friends
-                  - if (favorites.length)
-                    ul#favorites-list.column.full
-                      li#search-favorites.row.clearfix
-                        input(placeholder="Search your favorite friends")
-                      - for favorite, i in favorites
-                        li.favorite.row.clearfix
-                          .column.percent-75.id=favorite.name
-                          .column.percent-25
-                            .row.clearfix
-                              .column.third.icon
-                                span(title="favorite this user").fa.fa-star-o
-                              .column.third.icon
-                                span(title="send game invite").fa.fa-send-o
-                  - else
-                    p.column.full You have not favorited any friends yet.
+                  ul#favorites-list.column.full(class = user.favorites.length ? '' : 'hidden')
+                    li#search-favorites.row.clearfix
+                      input(placeholder="Search your favorite friends")
+                    - for favorite, i in favorites
+                      li(data-fid="#{favorite.id}" data-favorited="true").favorite.row.clearfix.transparent-container
+                        .column.percent-75.id=favorite.name
+                        .column.percent-25
+                          .row.clearfix
+                            .column.half.icon
+                              span(title="unfavorite friend").fa.fa-star.favorite-friend
+                            .column.half.icon
+                              span(title="send game invite").fa.fa-send-o
+                  p#no-favorites.column.full(class = user.favorites.length ? 'hidden' : '') You have not favorited any friends yet.
           ul#friends.column.percent-60
             li#search-friends.row.clearfix
               .column.percent-93#search
@@ -78,15 +76,16 @@ block content
               a#refresh.column.percent-7(href="/refresh", title="refresh")
                 span.fa.fa-refresh
             - for friend, i in friends
-              li(data-fid="#{friend.id}").friend.row.clearfix.collapse-xsmall
-                .column.percent-75.id=friend.name + ' | @' + friend.screen_name
+              li(data-fid="#{friend.id}" data-favorited="#{user.favorites.indexOf(friend.id) > -1 ? true : false}").friend.row.clearfix.collapse-xsmall
+                .column.percent-75.id=friend.name + ' | '
+                  a(href="https://twitter.com/#{friend.screen_name}" title="link to profile" target="_blank")= '@' + friend.screen_name
                 .column.percent-25
                   .row.clearfix
                     .column.third.icon
-                      span(title="favorite this user").favorite-friend.fa.fa-star-o
+                      span(title="favorite this user" class = user.favorites.indexOf(friend.id) > -1 ? 'fa-star' : 'fa-star-o').favorite-friend.fa
                     .column.third.icon
                       span(title="send game invite").fa.fa-send-o
                     .column.third.icon
                       span(title="expand details").fa.fa-plus
       - else
-        p You have exceeded the rate limit
+        p#no-favorites You have exceeded the rate limit

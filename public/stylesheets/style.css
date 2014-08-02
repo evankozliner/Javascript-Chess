@@ -799,6 +799,9 @@ body {
 .hasPiece {
   cursor: pointer; }
 
+.hidden {
+  display: none; }
+
 .selected span {
   border: 2px solid #3498DB;
   padding-top: 6px;
@@ -922,15 +925,6 @@ body {
 #white-indicator {
   background-color: white; }
 
-.icon {
-  margin-top: 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px; }
-
-.icon span:hover {
-  font-size: 19px; }
-
 .fa-star-o, .fa-star {
   color: #ffd100; }
 
@@ -1017,21 +1011,78 @@ body {
       background-color: #ffd100; }
   #dashboard #games #finished-games.row .dot {
     background-color: #444444; }
+  #dashboard #favorites #favorites-title {
+    background-image: linear-gradient(#f6f6f6, #f0f0f0);
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; }
   #dashboard #favorites #favorites-list {
     list-style-type: none;
     padding-left: 0;
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative; }
+    #dashboard #favorites #favorites-list .favorite {
+      position: relative;
+      padding: 5px 10px;
+      border-bottom: 1px solid #cccccc;
+      font-family: 'Aileron-Light', sans-serif;
+      color: #444444;
+      -webkit-transition: 200ms;
+      -moz-transition: 200ms;
+      -o-transition: 200ms;
+      -ms-transition: 200ms; }
+      #dashboard #favorites #favorites-list .favorite .icon span {
+        cursor: pointer; }
+    #dashboard #favorites #favorites-list .favorite:hover {
+      margin: 5px -10px;
+      padding: 5px 20px;
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.95);
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      border-bottom: 1px solid #bbb;
+      -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+      -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
+    #dashboard #favorites #favorites-list .favorite:last-child {
+      border-bottom: none; }
+  #dashboard #favorites #no-favorites {
+    position: relative;
+    padding: 5px 10px;
+    border-bottom: 1px solid #cccccc;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-top: 0;
+    font-family: 'Aileron-Light', sans-serif;
+    color: #444444;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    -ms-transition: 200ms; }
   #dashboard #favorites #search-favorites {
     font-family: 'Aileron-Light', sans-serif; }
     #dashboard #favorites #search-favorites input {
       width: 100%;
-      border: none;
       padding: 5px 10px;
-      border-right: 1px solid #cccccc;
-      border-left: 1px solid #cccccc;
+      border-top: none;
+      border-right: none;
+      border-left: none;
       border-bottom: 1px solid #cccccc; }
     #dashboard #favorites #search-favorites input:focus {
       outline: none; }
+  #dashboard #favorites:hover {
+    margin-top: 0px;
+    background: none;
+    -webkit-box-shadow: 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 transparent;
+    -ms-box-shadow: 0 0 0 transparent;
+    -o-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent; }
 
 #dashboard > .row > .column {
   margin-bottom: 15px; }
@@ -1061,13 +1112,39 @@ body {
     -ms-transition: 200ms; }
     #friends li .id {
       text-align: center; }
+      #friends li .id a {
+        color: #428bca;
+        text-decoration: none; }
+    #friends li .icon {
+      text-align: right;
+      cursor: pointer;
+      font-size: 18px; }
   #friends li:hover {
     background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #bbb;
+    padding: 15px 25px;
+    font-size: 18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
     position: relative;
     margin: 10px -10px; }
+    #friends li:hover .icon {
+      text-align: right;
+      cursor: pointer;
+      font-size: 20px;
+      margin-bottom: -2px; }
+    #friends li:hover .icon:hover {
+      font-size: 22px;
+      margin-top: -2px; }
   #friends #refresh {
     font-size: 20px;
     color: #444444;
@@ -1105,6 +1182,12 @@ body {
       -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
       -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
+  #friends #search-friends:hover {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }
 
 @media (min-width: 34rem) {
   .icon {

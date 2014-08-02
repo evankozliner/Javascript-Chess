@@ -19,6 +19,7 @@ var http = require('http'),
       consumer_secret: credentials.twitter.secret
     },
     mainController = require('./controllers/mainController.js'),
+    userController = require('./controllers/userController.js'),
     User = require('./models/user.js');
 
 var app = express();
@@ -161,6 +162,15 @@ app.get('/refresh', loggedIn, function(req, res) {
 app.get('/login', mainController.login);
 app.get('/game', function(req, res) {
   res.render('game', {title: 'aGameOfChess'});
+});
+
+app.get('/user/favorite/:id', loggedIn, function(req, res) {
+  req.session.oauth = userOauth;
+  userController.favorite(req, res);
+});
+app.get('/user/unfavorite/:id', loggedIn, function(req, res) {
+  req.session.oauth = userOauth;
+  userController.unfavorite(req, res);
 });
 
 app.use(function(req, res, next) {
