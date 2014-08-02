@@ -55,6 +55,10 @@
       }
     });
   });
+  $('.friend .id a').click(function(e) {
+    e.stopPropagation();
+    return true;
+  });
   $('.expand-details').click(function(e) {
     if ($(this).hasClass('fa-plus')) {
       $(this).removeClass('fa-plus').addClass('fa-minus');
@@ -70,6 +74,7 @@
   });
   function prepareFavoriteButtons() {
     $('.favorite-friend').click(function(e) {
+      e.stopPropagation();
       $('.favorite-friend').off('click');
       var $friend =  $(this).closest('li');
       var friendId = $friend.data('fid'),

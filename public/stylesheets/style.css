@@ -1138,6 +1138,8 @@ body {
       #friends li .id a {
         color: #428bca;
         text-decoration: none; }
+      #friends li .id a:hover {
+        text-decoration: underline; }
     #friends li .icon {
       text-align: right;
       cursor: pointer;
