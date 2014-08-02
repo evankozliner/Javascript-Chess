@@ -7,6 +7,7 @@ exports.index = function(req, res) {
       friends = [];
   User.findOne({uid: userId}, function(err, user) {
     if (!user.hasFriends) {
+      console.log('updating friends for user' + user.name);
       var cursor = -1,
           count = 0,
           params,

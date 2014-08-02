@@ -879,12 +879,14 @@ body {
   position: relative;
   text-align: center;
   margin: 0 auto;
+  padding: 0px;
   font-family: 'Aileron-Light', sans-serif;
   -webkit-transition: 200ms;
   -moz-transition: 200ms;
   -o-transition: 200ms;
   -ms-transition: 200ms; }
   #login a {
+    padding: 15px 0;
     color: #444444;
     text-decoration: none; }
   #login span {

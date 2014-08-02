@@ -147,8 +147,10 @@ body {
   position: relative;
   text-align: center;
   margin: 0 auto;
+  padding: 0px;
   font-family: 'Aileron-Light', sans-serif;
   a {
+    padding: 15px 0;
     color: $textColor;
     text-decoration: none;
   }
