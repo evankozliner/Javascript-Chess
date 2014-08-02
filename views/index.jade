@@ -78,12 +78,12 @@ block content
               a#refresh.column.percent-7(href="/refresh", title="refresh")
                 span.fa.fa-refresh
             - for friend, i in friends
-              li(data-uid="#{friend.id}").friend.row.clearfix.collapse-xsmall
+              li(data-fid="#{friend.id}").friend.row.clearfix.collapse-xsmall
                 .column.percent-75.id=friend.name + ' | @' + friend.screen_name
                 .column.percent-25
                   .row.clearfix
                     .column.third.icon
-                      span(title="favorite this user").fa.fa-star-o
+                      span(title="favorite this user").favorite-friend.fa.fa-star-o
                     .column.third.icon
                       span(title="send game invite").fa.fa-send-o
                     .column.third.icon

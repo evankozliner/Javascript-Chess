@@ -1,4 +1,15 @@
 (function() {
+  this.AJAX = (function(doc, $) {
+    function favoriteFriend(friendId, cb) {
+
+      cb();
+    }
+
+    return {
+      favoriteFriend: favoriteFriend
+    };
+  })(document, jQuery);
+
   $('#search-friends input').keyup(function(e) {
     var search = $(this).val();
     $('.friend').each(function(i, friend) {
@@ -10,5 +21,8 @@
         }
       }
     });
+  });
+  $('.favorite-friend').click(function(e) {
+    console.log($(this).closest('li').data('fid'));
   });
 })();
