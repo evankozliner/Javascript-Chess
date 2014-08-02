@@ -86,6 +86,16 @@ block content
                     .column.third.icon
                       span(title="send game invite").fa.fa-send-o
                     .column.third.icon
-                      span(title="expand details").fa.fa-plus
+                      span(title="expand details").expand-details.fa.fa-plus
+                .column.full.friend-details
+                  .row.clearfix
+                    .column.percent-10
+                      img(src="#{friend.avatar}").responsive
+                    .column.percent-22.detail Total:
+                      span=friend.gamesPlayed
+                    .column.percent-34.detail.games-won Won Against:&nbsp;
+                      span=friend.gamesWonAgainst
+                    .column.percent-34.detail.games-lost Lost Against:&nbsp;
+                      span=friend.gamesLostAgainst
       - else
         p#no-favorites You have exceeded the rate limit

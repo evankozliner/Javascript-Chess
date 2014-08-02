@@ -55,6 +55,19 @@
       }
     });
   });
+  $('.expand-details').click(function(e) {
+    if ($(this).hasClass('fa-plus')) {
+      $(this).removeClass('fa-plus').addClass('fa-minus');
+    } else {
+      $(this).removeClass('fa-minus').addClass('fa-plus');
+    }
+    $(this).closest('li').find('.friend-details').slideToggle(150);
+    return false;
+  });
+  $('.friend').click(function(e) {
+    $(this).find('.expand-details').click();
+    return false;
+  });
   function prepareFavoriteButtons() {
     $('.favorite-friend').click(function(e) {
       $('.favorite-friend').off('click');
@@ -63,7 +76,6 @@
           isFavorite = $friend.attr('data-favorited') == 'true' ? true : false,
           cb;
 
-      console.log(isFavorite);
       if (!isFavorite) {
         if ($('#no-favorites').is(':visible')) {
           $('#no-favorites').toggle();

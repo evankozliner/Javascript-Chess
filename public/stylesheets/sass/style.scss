@@ -193,6 +193,9 @@ body {
 .fa-plus {
   color: $lightBlue;
 }
+.fa-minus {
+  color: $red;
+}
 #dashboard {
   color: $textColor;
   .dashboard-item {
@@ -289,6 +292,7 @@ body {
       padding: 15px;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
+      @include boxShadow(0, 1px, 1px, rgba(0,0,0,0.5));
     }
     #favorites-list {
       list-style-type: none;
@@ -303,6 +307,7 @@ body {
         font-family: 'Aileron-Light', sans-serif;
         color: $textColor;
         @include transition(200ms);
+        @include boxShadow(0, 1px, 1px, rgba(0,0,0,0.5));
         .icon span {
           cursor: pointer;
         }
@@ -329,9 +334,11 @@ body {
       font-family: 'Aileron-Light', sans-serif;
       color: $textColor;
       @include transition(200ms);
+      @include boxShadow(0, 1px, 1px, rgba(0,0,0,0.5));
     }
     #search-favorites {
       font-family: 'Aileron-Light', sans-serif;
+      @include boxShadow(0, 1px, 1px, rgba(0,0,0,0.5));
       input {
         width: 100%;
         padding: 5px 10px;
@@ -381,6 +388,23 @@ body {
       text-align: right;
       cursor: pointer;
       font-size: 18px;
+    }
+    .friend-details {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: $grayBorder;
+      display: none;
+      color: $textColor;
+      .detail {
+        margin-top: 13px;
+        text-align: center;
+      }
+      .games-won {
+        color: $green;
+      }
+      .games-lost {
+        color: $red;
+      }
     }
   }
   li:hover {

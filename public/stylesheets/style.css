@@ -934,6 +934,9 @@ body {
 .fa-plus {
   color: #26a3f6; }
 
+.fa-minus {
+  color: #e5493e; }
+
 #dashboard {
   color: #444444; }
   #dashboard .dashboard-item {
@@ -1015,7 +1018,12 @@ body {
     background-image: linear-gradient(#f6f6f6, #f0f0f0);
     padding: 15px;
     border-top-right-radius: 5px;
-    border-top-left-radius: 5px; }
+    border-top-left-radius: 5px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
   #dashboard #favorites #favorites-list {
     list-style-type: none;
     padding-left: 0;
@@ -1031,7 +1039,12 @@ body {
       -webkit-transition: 200ms;
       -moz-transition: 200ms;
       -o-transition: 200ms;
-      -ms-transition: 200ms; }
+      -ms-transition: 200ms;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
       #dashboard #favorites #favorites-list .favorite .icon span {
         cursor: pointer; }
     #dashboard #favorites #favorites-list .favorite:hover {
@@ -1063,9 +1076,19 @@ body {
     -webkit-transition: 200ms;
     -moz-transition: 200ms;
     -o-transition: 200ms;
-    -ms-transition: 200ms; }
+    -ms-transition: 200ms;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
   #dashboard #favorites #search-favorites {
-    font-family: 'Aileron-Light', sans-serif; }
+    font-family: 'Aileron-Light', sans-serif;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
     #dashboard #favorites #search-favorites input {
       width: 100%;
       padding: 5px 10px;
@@ -1119,6 +1142,19 @@ body {
       text-align: right;
       cursor: pointer;
       font-size: 18px; }
+    #friends li .friend-details {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #cccccc;
+      display: none;
+      color: #444444; }
+      #friends li .friend-details .detail {
+        margin-top: 13px;
+        text-align: center; }
+      #friends li .friend-details .games-won {
+        color: #39d179; }
+      #friends li .friend-details .games-lost {
+        color: #e5493e; }
   #friends li:hover {
     background-color: rgba(255, 255, 255, 0.95);
     -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
