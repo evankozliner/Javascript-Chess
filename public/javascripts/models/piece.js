@@ -10,7 +10,6 @@
     this.number = properties[2];
     this.column = properties[3].charAt(0);
     this.row = properties[3].charAt(1);
-    this.moves = [properties[3]];
     this.hasMoved = false;
   }
 
@@ -85,15 +84,11 @@
     return moves;
   }
 
-  function getPawnMoves(piece, columns, multiplier) {
-    moves = [];
+  function getPawnMoves(piece, columns, multiplier, moves) {
 
     if (!getHasMoved(piece)) {
       var newCell = piece.column + (Number(piece.row) + 2 * multiplier);
-      moves.push(newCell);
-      //en passent logic will be here
-      //add en passent property to any pawns adjacent to this one on drop
-      //if there's an adjacent pawn, add the property to it
+      if (document.getElementById(newCell).childNodes.length <= 0) moves.push(newCell);
     }
 
     nextNorth = document.getElementById( piece.column + ( Number(piece.row) + 1 * multiplier ) );
@@ -103,7 +98,7 @@
     leftDiagonalElement = document.getElementById(leftDiagonal);
 
     if ( nextNorth != undefined && nextNorth.childNodes.length > 0 )  {
-      moves.splice(moves.indexOf(nextNorth));
+      moves.splice(moves.indexOf(nextNorth), 1);
     }
     if ( (rightDiagonalElement != undefined) && (rightDiagonalElement.childNodes.length > 0)) {
       moves.push(rightDiagonal);
@@ -116,7 +111,6 @@
     if(String(getEnPassant(piece)).split("-")[0] === "true") {
       moves.push(String(getEnPassant(piece)).split("-")[1]);
     }
-
     return moves;
   }
 
@@ -231,7 +225,9 @@
     moves = moves.concat(movesNorth).concat(movesSouth).concat(movesEast).concat(movesWest).concat(movesNE).concat(movesNW).concat(movesSE).concat(movesSW);
     //pawn logic
     if ( piece.type === 'pawn' ) {
-      moves = moves.concat(getPawnMoves(piece, columns, multiplier));
+      moves = getPawnMoves(piece, columns, multiplier, moves);
+    } else if ( piece.type == 'king' ) {
+
     }
     return moves;
   }

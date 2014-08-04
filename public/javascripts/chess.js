@@ -44,7 +44,7 @@ function prepareFigure(figure) {
   image.src = getFigureImage(figure);
   figure.addEventListener('dragstart', function(e) {
     parent.className += ' selected';
-    potentialMoves = findPotentialMoves(figure, parent.id);
+    potentialMoves = createPieceFromFigure(figure, parent.id).potentialMoves();
     prepareCells(potentialMoves);
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', parent.innerHTML);
@@ -96,16 +96,16 @@ function whichTeam(cell) {
  * @param {string} position
  * @return {array}
  */
-function findPotentialMoves(piece, position) {
-  var properties = piece.id.split('-');
-  // if piece is king or queen then there is no number specified
-  if (properties.length === 2) {
-    properties.push(null);
-  }
-  properties.push(position);
-  var piece = new Piece(properties);
-  return piece.potentialMoves();
-}
+// function findPotentialMoves(piece, position) {
+//   var properties = piece.id.split('-');
+//   // if piece is king or queen then there is no number specified
+//   if (properties.length === 2) {
+//     properties.push(null);
+//   }
+//   properties.push(position);
+//   var piece = new Piece(properties);
+//   return piece.potentialMoves();
+// }
 
 /**
  * prepareCells adds drag event listeners to cells marked as potential
@@ -207,11 +207,11 @@ function handleDrop(e) {
     multiplier = 1;
     if (move.to.team === "black") multiplier = -1;
     columns = getColumns();
-    console.log(move.to);
-    console.log(move.from);
-    if ( Math.abs(Number(columns.indexOf(move.to[0])) - Number(columns.indexOf(move.from[0]))) > 0 ) {
-      var lowerSquare = document.getElementById(move.to[0] + (Number(move.to[1]) - 1 * multiplier));
-      sendToGraveyard(lowerSquare.childNodes[0])
+    var values = document.getElementById(move.to).childNodes[0].id.split("-");
+    var enPassant = getPieces()[move.team]['pawn' + values[2]]['enPassant'].split("-")[0];
+    if ( (Math.abs(Number(columns.indexOf(move.to[0])) - Number(columns.indexOf(move.from[0]))) > 0) && enPassant == "true" ) {
+      var lowerSquare = document.getElementById(move.to[0] + (Number(move.to[1]) - 1 * multiplier)).childNodes[0];
+      sendToGraveyard(lowerSquare);
     }
     //check to see if we can add en passant to another piece
     if ((Math.abs(Number(move.to[1]) - Number(move.from[1]))) > 1) handleEnPassant(move);
@@ -219,8 +219,62 @@ function handleDrop(e) {
 
   setHasMoved(figureProperties);
   prepareFigure(this.childNodes[0]);
+  var checkTeam = move.team === 'white' ? 'black' : 'white';
+  var pieces = getPieces();
+  setInCheck(pieces[checkTeam].king, pieces[move.team]);
   nextTurn();
   return false;
+}
+
+/**
+ * @param {object} king
+ * @param {object} pieces
+ * Sets the inCheck property for the king
+ */
+function setInCheck(oppositeKing, pieces) {
+  var piecesToCheck = [],
+      pieceNames = Object.keys(pieces),
+      i;
+
+  for (i = 0; i < pieceNames.length; i += 1) {
+    var pieceName = pieceNames[i];
+    if (!isNaN(pieceName[pieceName.length - 1])) {
+      pieceName = pieceName.slice(0, pieceName.length - 1);
+    }
+    if (piecesToCheck.indexOf(pieceName) < 0) {
+      piecesToCheck.push(pieceName);
+    }
+  }
+
+  var kingFigure = document.getElementById(oppositeKing.position).childNodes[0];
+
+  for (i = 0; i < piecesToCheck.length; i += 1) {
+    // var num = (piece === 'king' || piece === 'queen') ? null : '1';
+
+    var fakePiece = createPieceFromFigure(kingFigure, oppositeKing.position);
+    fakePiece.type = piecesToCheck[i];
+    fakePiece.number = 1;
+    moves = fakePiece.potentialMoves();
+
+    //TODO: this shit crashes the game
+    for(var i = 0; i < moves.length; i += 1) {
+      var square = document.getElementById(moves[i]);
+      if (square.childNodes.length > 0 && square.childNodes[0].id.split("-")[1] == fakePiece.type) {
+        console.log("check!");
+      }
+    }
+  }
+}
+
+function createPieceFromFigure(figure, position) {
+  var properties = figure.id.split('-');
+
+  if (properties.length === 2) {
+    properties.push(null);
+  }
+  properties.push(position);
+
+  return new Piece(properties);
 }
 
 /**
