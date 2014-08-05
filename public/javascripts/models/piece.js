@@ -101,10 +101,14 @@
       moves.splice(moves.indexOf(nextNorth), 1);
     }
     if ( (rightDiagonalElement != undefined) && (rightDiagonalElement.childNodes.length > 0)) {
-      moves.push(rightDiagonal);
+      if (rightDiagonalElement.childNodes[0].id.split("-")[0] != piece.team) {
+        moves.push(rightDiagonal);
+      }
     }
     if ( ( leftDiagonalElement != undefined ) && (leftDiagonalElement.childNodes.length > 0 ) ){
-      moves.push(leftDiagonal);
+      if (leftDiagonalElement.childNodes[0].id.split("-")[0] != piece.team) {
+        moves.push(leftDiagonal);
+      }
     }
 
     //append the en passant move

@@ -205,7 +205,7 @@ function handleDrop(e) {
   if (move.piece.substring(0, move.piece.length - 1) === 'pawn') {
     //check to see if this piece has performed en passant
     multiplier = 1;
-    if (move.to.team === "black") multiplier = -1;
+    if (move.team === "black") multiplier = -1;
     columns = getColumns();
     var values = document.getElementById(move.to).childNodes[0].id.split("-");
     var enPassant = getPieces()[move.team]['pawn' + values[2]]['enPassant'].split("-")[0];
@@ -252,15 +252,20 @@ function setInCheck(oppositeKing, pieces) {
     // var num = (piece === 'king' || piece === 'queen') ? null : '1';
 
     var fakePiece = createPieceFromFigure(kingFigure, oppositeKing.position);
+    fakePiece.hasMoved = true;
     fakePiece.type = piecesToCheck[i];
     fakePiece.number = 1;
-    moves = fakePiece.potentialMoves();
 
-    //TODO: this shit crashes the game
-    for(var i = 0; i < moves.length; i += 1) {
-      var square = document.getElementById(moves[i]);
-      if (square.childNodes.length > 0 && square.childNodes[0].id.split("-")[1] == fakePiece.type) {
-        console.log("check!");
+    moves = fakePiece.potentialMoves();
+    //TODO: this crashes the game
+    if (moves.length > 0) {
+      console.log(fakePiece);
+      console.log(moves.length)
+      for(var j = 0; j < moves.length; j++) {
+        var square = document.getElementById(moves[j]);
+        if (square.childNodes.length > 0 && square.childNodes[0].id.split("-")[1] == fakePiece.type) {
+          console.log("check!");
+        }
       }
     }
   }

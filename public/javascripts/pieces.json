@@ -10,26 +10,31 @@ var pieces = {
     "queen": {
       "id": "white-queen",
       "figure": "q",
+      "hasMoved": "false",
       "position": "d1"
     },
     "bishop1": {
       "id": "white-bishop-1",
       "figure": "b",
+      "hasMoved": "false",
       "position": "c1"
     },
     "bishop2": {
       "id": "white-bishop-2",
       "figure": "b",
+      "hasMoved": "false",
       "position": "f1"
     },
     "knight1": {
       "id": "white-knight-1",
       "figure": "n",
+      "hasMoved": "false",
       "position": "b1"
     },
     "knight2": {
       "id": "white-knight-2",
       "figure": "n",
+      "hasMoved": "false",
       "position": "g1"
     },
     "rook1": {
@@ -112,26 +117,31 @@ var pieces = {
     "queen": {
       "id": "black-queen",
       "figure": "w",
+      "hasMoved": "false",
       "position": "d8"
     },
     "bishop1": {
       "id": "black-bishop-1",
       "figure": "v",
+      "hasMoved": "false",
       "position": "c8"
     },
     "bishop2": {
       "id": "black-bishop-2",
       "figure": "v",
+      "hasMoved": "false",
       "position": "f8"
     },
     "knight1": {
       "id": "black-knight-1",
       "figure": "m",
+      "hasMoved": "false",
       "position": "b8"
     },
     "knight2": {
       "id": "black-knight-2",
       "figure": "m",
+      "hasMoved": "false",
       "position": "g8"
     },
     "rook1": {
