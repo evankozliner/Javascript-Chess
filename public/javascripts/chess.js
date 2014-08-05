@@ -257,7 +257,6 @@ function setInCheck(oppositeKing, pieces) {
     fakePiece.number = 1;
 
     moves = fakePiece.potentialMoves();
-    //TODO: this crashes the game
     if (moves.length > 0) {
       console.log(fakePiece);
       console.log(moves.length)
