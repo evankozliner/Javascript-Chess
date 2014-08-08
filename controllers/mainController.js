@@ -32,8 +32,9 @@ exports.index = function(req, res) {
             friends.push(user);
           }
           cursor = json.next_cursor_str;
-          if (cursor != '0' && count < 4) {
-            getFriends();
+          if (cursor != '0' && count < 10) {
+            count += 1;
+            getFriends(cb);
           } else {
             console.log(friends);
             cb();
