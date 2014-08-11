@@ -221,7 +221,7 @@ function handleDrop(e) {
   prepareFigure(this.childNodes[0]);
   var checkTeam = move.team === 'white' ? 'black' : 'white';
   var pieces = getPieces();
-  setInCheck(pieces[checkTeam].king, pieces[move.team]);
+  putInCheck(pieces[checkTeam].king, pieces[move.team]);
   nextTurn();
   return false;
 }
@@ -231,7 +231,7 @@ function handleDrop(e) {
  * @param {object} pieces
  * Sets the inCheck property for the king
  */
-function setInCheck(oppositeKing, pieces) {
+function putInCheck(oppositeKing, pieces) {
   var piecesToCheck = [],
       pieceNames = Object.keys(pieces),
       i;
@@ -258,11 +258,12 @@ function setInCheck(oppositeKing, pieces) {
 
     moves = fakePiece.potentialMoves();
     if (moves.length > 0) {
-      console.log(fakePiece);
-      console.log(moves.length)
+      // console.log(fakePiece);
+      // console.log(moves.length)
       for(var j = 0; j < moves.length; j++) {
         var square = document.getElementById(moves[j]);
         if (square.childNodes.length > 0 && square.childNodes[0].id.split("-")[1] == fakePiece.type) {
+          setInCheck(oppositeKing.id.split("-")[0]);
           console.log("check!");
         }
       }
@@ -560,4 +561,21 @@ function setEnPassant(team, type, square) {
  */
 function getColumns() {
   return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+}
+/** TODO:
+ * @params {object} piece
+ * @return {boolean} inCheck
+ */
+ function getInCheck(team) {
+  var pieces = getPieces();
+  return pieces[team]['king']["inCheck"];
+ }
+/** TODO:
+* @params {object} piece
+* @return {boolean} inCheck
+*/
+function setInCheck(team) {
+  var pieces = getPieces();
+  pieces[team]['king']["inCheck"] = "true";
+  setPieces(pieces);
 }

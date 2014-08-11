@@ -52,6 +52,7 @@
         team = piece.team;
     if (team === 'black') multiplier = -1;
 
+    console.log(getPieces()[team]['king']);
     newColumn = columns[columns.indexOf(piece.column) + 2 * multiplier];
     newRow = Number(piece.row) + 1 * multiplier;
     if (knightCheck(newColumn, newRow, team, columns)) moves.push(newColumn + newRow);
