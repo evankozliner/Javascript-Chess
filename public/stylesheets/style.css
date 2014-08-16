@@ -868,7 +868,7 @@ body {
   color: #444444; }
 
 #description {
-  font-family: 'Aileron-Light', sans-serif;
+  font-family: 'Aileron Light', sans-serif;
   max-width: 500px;
   position: relative;
   margin: 20px auto; }
@@ -883,7 +883,7 @@ body {
   text-align: center;
   margin: 0 auto;
   padding: 0px;
-  font-family: 'Aileron-Light', sans-serif;
+  font-family: 'Aileron Light', sans-serif;
   -webkit-transition: 200ms;
   -moz-transition: 200ms;
   -o-transition: 200ms;
@@ -946,7 +946,7 @@ body {
     -ms-transition: 150ms; }
     #dashboard .dashboard-item h3 {
       margin-top: 0px;
-      font-family: 'Aileron-Light', sans-serif;
+      font-family: 'Aileron Light', sans-serif;
       font-weight: 300;
       margin-bottom: 0px;
       padding-bottom: 5px;
@@ -954,7 +954,7 @@ body {
     #dashboard .dashboard-item p {
       margin: 10px 0;
       font-size: 16px;
-      font-family: 'Aileron-Light', sans-serif; }
+      font-family: 'Aileron Light', sans-serif; }
   #dashboard .dashboard-item:hover {
     background-color: rgba(255, 255, 255, 0.95);
     margin-top: -3px;
@@ -965,7 +965,7 @@ body {
     -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
   #dashboard #account #account-info {
-    font-family: 'Aileron-Light', sans-serif;
+    font-family: 'Aileron Light', sans-serif;
     font-size: 20px; }
     #dashboard #account #account-info .info {
       margin-top: 10px; }
@@ -977,7 +977,7 @@ body {
     margin-top: 15px;
     padding-top: 10px;
     border-top: 1px solid #cccccc;
-    font-family: 'Aileron-Light', sans-serif;
+    font-family: 'Aileron Light', sans-serif;
     font-size: 16px; }
     #dashboard #account #account-details #won {
       color: #39d179; }
@@ -1034,7 +1034,7 @@ body {
       position: relative;
       padding: 5px 10px;
       border-bottom: 1px solid #cccccc;
-      font-family: 'Aileron-Light', sans-serif;
+      font-family: 'Aileron Light', sans-serif;
       color: #444444;
       -webkit-transition: 200ms;
       -moz-transition: 200ms;
@@ -1071,7 +1071,7 @@ body {
     border-bottom: 1px solid #cccccc;
     background-color: rgba(255, 255, 255, 0.85);
     margin-top: 0;
-    font-family: 'Aileron-Light', sans-serif;
+    font-family: 'Aileron Light', sans-serif;
     color: #444444;
     -webkit-transition: 200ms;
     -moz-transition: 200ms;
@@ -1083,7 +1083,7 @@ body {
     -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
   #dashboard #favorites #search-favorites {
-    font-family: 'Aileron-Light', sans-serif;
+    font-family: 'Aileron Light', sans-serif;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
@@ -1127,7 +1127,7 @@ body {
     -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
-    font-family: 'Aileron-Light', sans-serif;
+    font-family: 'Aileron Light', sans-serif;
     border-bottom: 1px solid #cccccc;
     -webkit-transition: 200ms;
     -moz-transition: 200ms;
